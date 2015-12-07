@@ -1,0 +1,19 @@
+﻿body {
+	background-color: aliceblue;
+	font-family: 'Segoe UI', sans-serif;
+	font-size: 1em;
+}
+
+h1 {
+	border-bottom: 3px solid darkred;
+	font-family: Impact, sans-serif;
+	font-size: 2.5em;
+}
+
+a::before, a::after {
+	content: "\002708";
+}
+
+code{
+	font-family: Consolas, monospace;
+}
