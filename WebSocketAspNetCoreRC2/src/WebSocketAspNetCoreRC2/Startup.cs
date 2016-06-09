@@ -89,7 +89,7 @@ namespace WebSocketAspNetCoreRC2
 			/*
 			 * Single example
 			 * Echoes message until close connection
-			 * http://localhost:5000/Once
+			 * http://localhost:5000/Single
 			 */
 			app.Map("/Single", once =>
 			{
@@ -137,7 +137,7 @@ namespace WebSocketAspNetCoreRC2
 			/*
 			 * Broadcast example
 			 * Sends message to all connections until close connection
-			 * http://localhost:5000/Once
+			 * http://localhost:5000/Broadcast
 			 */
 			var allSockets = new ConcurrentBag<WebSocket>();
 
