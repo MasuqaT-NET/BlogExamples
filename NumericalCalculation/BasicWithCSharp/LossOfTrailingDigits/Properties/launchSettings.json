@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "LossOfTrailingDigits": {
+      "commandName": "Project",
+      "commandLineArgs": "> result.txt"
+    }
+  }
+}
