@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CancellationOfSignificantDigits": {
+      "commandName": "Project",
+      "commandLineArgs": "> result.txt"
+    }
+  }
+}
