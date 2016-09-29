@@ -41,11 +41,13 @@ namespace CancellationOfSignificantDigits
 			var normal = NormalSolver(a, b, c);
 			var cared = CaredSolver(a, b, c);
 
+			Console.WriteLine("f(x) = x^2 - 1000x + c = 0");
+
 			Console.WriteLine($"normal: x_1= {normal.Item1:F8}, x_2= {normal.Item2:F8}");
-			Console.WriteLine($"x_2 -> {(a * normal.Item2 * normal.Item2 + b * normal.Item2 + c):F8}");
+			Console.WriteLine($"f(x_2) -> {(a * normal.Item2 * normal.Item2 + b * normal.Item2 + c):F8}");
 
 			Console.WriteLine($"cared : x_1= {cared.Item1:F8}, x_2= {cared.Item2:F8}");
-			Console.WriteLine($"x_2 -> {(a * cared.Item2 * cared.Item2 + b * cared.Item2 + c):F8}");
+			Console.WriteLine($"f(x_2) -> {(a * cared.Item2 * cared.Item2 + b * cared.Item2 + c):F8}");
 		}
 	}
 }
