@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SimpleGaussJordanElimination": {
+      "commandName": "Project",
+      "commandLineArgs": "> result.txt"
+    }
+  }
+}
