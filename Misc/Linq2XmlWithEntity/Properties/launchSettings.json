@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Linq2XmlWithEntity": {
+      "commandName": "Project",
+      "commandLineArgs": "> result.txt"
+    }
+  }
+}
