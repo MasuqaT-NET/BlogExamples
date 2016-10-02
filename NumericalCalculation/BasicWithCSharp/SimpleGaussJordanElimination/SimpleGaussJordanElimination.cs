@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace SimpleGaussJordanElimination
 {
@@ -97,7 +98,7 @@ namespace SimpleGaussJordanElimination
 			solutionX = vectorB;
 
 			Console.WriteLine("解");
-			Console.WriteLine(string.Join("\n", System.Linq.Enumerable.Select(solutionX, x => $"{x,8:F4}")));
+			Console.WriteLine(string.Join("\n", solutionX.Select(x => $"{x,8:F4}")));
 		}
 	}
 }
