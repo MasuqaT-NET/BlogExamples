@@ -1,0 +1,24 @@
+﻿<Window x:Class="Introduction.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="clr-namespace:Introduction"
+		xmlns:sc="http://sparrowtoolkit.codeplex.com/wpf"
+		mc:Ignorable="d"
+		Title="Introduction" Height="350" Width="525">
+	<Window.DataContext>
+		<local:ViewModel />
+	</Window.DataContext>
+
+	<sc:SparrowChart>
+		<sc:SparrowChart.XAxis>
+			<sc:LinearXAxis />
+		</sc:SparrowChart.XAxis>
+		<sc:SparrowChart.YAxis>
+			<sc:LinearYAxis />
+		</sc:SparrowChart.YAxis>
+
+		<sc:LineSeries PointsSource="{Binding Path=Points}" XPath="X" YPath="Fx" />
+	</sc:SparrowChart>
+</Window>
