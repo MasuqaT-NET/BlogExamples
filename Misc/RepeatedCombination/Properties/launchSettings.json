@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "RepeatedCombination": {
+      "commandName": "Project",
+      "commandLineArgs": "> result.txt"
+    }
+  }
+}
