@@ -1,0 +1,38 @@
+﻿<Window x:Class="CustomizeAxes.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="clr-namespace:CustomizeAxes"
+		xmlns:sc="http://sparrowtoolkit.codeplex.com/wpf"
+		mc:Ignorable="d"
+		Title="CustomizeAxes" Height="350" Width="525">
+	<Window.DataContext>
+		<local:ViewModel />
+	</Window.DataContext>
+	<Window.Resources>
+		<local:RomanConverter x:Key="RomanConverter" />
+	</Window.Resources>
+
+	<sc:SparrowChart Margin="20">
+		<sc:SparrowChart.XAxis>
+			<sc:LinearXAxis Interval="1" MaxValue="10" MinValue="1" MajorTicksPosition="Outside" LabelAngle="10">
+				<sc:LinearXAxis.LabelTemplate>
+					<DataTemplate>
+						<Canvas>
+							<Ellipse Fill="Navy" Height="16" Width="16" />
+							<TextBlock Text="{Binding Converter={StaticResource ResourceKey=RomanConverter}}" Foreground="LightGray" Margin="1" />
+						</Canvas>
+					</DataTemplate>
+				</sc:LinearXAxis.LabelTemplate>
+			</sc:LinearXAxis>
+		</sc:SparrowChart.XAxis>
+		<sc:SparrowChart.YAxis>
+			<sc:LinearYAxis Interval="1" MaxValue="4" MinValue="-1" MajorTicksPosition="Inside" Header="総売り上げ" ShowCrossLines="False" />
+		</sc:SparrowChart.YAxis>
+
+		<sc:SparrowChart.Series>
+			<sc:LineSeries PointsSource="{Binding Path=Points}" XPath="X" YPath="Fx" />
+		</sc:SparrowChart.Series>
+	</sc:SparrowChart>
+</Window>
