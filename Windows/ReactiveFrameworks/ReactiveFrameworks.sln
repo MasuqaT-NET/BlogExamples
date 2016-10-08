@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByReactiveUI", "ByReactiveUI\ByReactiveUI.csproj", "{484A0968-15A5-495C-94E9-30B730D97ED9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByReactiveProperty", "ByReactiveProperty\ByReactiveProperty.csproj", "{BDB7BF4B-D5A6-4ACD-A701-84C263AA53FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{484A0968-15A5-495C-94E9-30B730D97ED9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{484A0968-15A5-495C-94E9-30B730D97ED9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{484A0968-15A5-495C-94E9-30B730D97ED9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{484A0968-15A5-495C-94E9-30B730D97ED9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDB7BF4B-D5A6-4ACD-A701-84C263AA53FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDB7BF4B-D5A6-4ACD-A701-84C263AA53FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDB7BF4B-D5A6-4ACD-A701-84C263AA53FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDB7BF4B-D5A6-4ACD-A701-84C263AA53FD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
