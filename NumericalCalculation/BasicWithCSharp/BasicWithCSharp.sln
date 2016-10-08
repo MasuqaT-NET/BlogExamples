@@ -11,6 +11,8 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CancellationOfSignificantDi
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SimpleGaussJordanElimination", "SimpleGaussJordanElimination\SimpleGaussJordanElimination.xproj", "{9BD9D6EF-BF88-444C-9485-A9A72C15D375}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SimpleGaussElimination", "SimpleGaussElimination\SimpleGaussElimination.xproj", "{F25DF7FB-724A-42D5-8588-50567BD0C3BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{9BD9D6EF-BF88-444C-9485-A9A72C15D375}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BD9D6EF-BF88-444C-9485-A9A72C15D375}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BD9D6EF-BF88-444C-9485-A9A72C15D375}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F25DF7FB-724A-42D5-8588-50567BD0C3BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F25DF7FB-724A-42D5-8588-50567BD0C3BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F25DF7FB-724A-42D5-8588-50567BD0C3BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F25DF7FB-724A-42D5-8588-50567BD0C3BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
