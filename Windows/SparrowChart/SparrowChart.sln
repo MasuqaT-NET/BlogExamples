@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Introduction", "Introductio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomizeAxes", "CustomizeAxes\CustomizeAxes.csproj", "{99D925BD-BEED-40F3-9DA1-D7D0DED1523E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomizeLegend", "CustomizeLegend\CustomizeLegend.csproj", "{182D4A0D-D835-4426-BB6D-9E732C0618FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{99D925BD-BEED-40F3-9DA1-D7D0DED1523E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99D925BD-BEED-40F3-9DA1-D7D0DED1523E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99D925BD-BEED-40F3-9DA1-D7D0DED1523E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{182D4A0D-D835-4426-BB6D-9E732C0618FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{182D4A0D-D835-4426-BB6D-9E732C0618FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{182D4A0D-D835-4426-BB6D-9E732C0618FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{182D4A0D-D835-4426-BB6D-9E732C0618FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

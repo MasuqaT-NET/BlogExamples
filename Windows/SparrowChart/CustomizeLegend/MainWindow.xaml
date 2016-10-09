@@ -1,0 +1,32 @@
+﻿<Window x:Class="CustomizeLegend.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:sc="http://sparrowtoolkit.codeplex.com/wpf"
+        xmlns:local="clr-namespace:CustomizeLegend"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+	<Window.DataContext>
+		<local:ViewModel />
+	</Window.DataContext>
+
+	<sc:SparrowChart Margin="20">
+		<sc:SparrowChart.XAxis>
+			<sc:LinearXAxis />
+		</sc:SparrowChart.XAxis>
+		<sc:SparrowChart.YAxis>
+			<sc:LinearYAxis MaxValue="4" MinValue="-1" />
+		</sc:SparrowChart.YAxis>
+
+		<sc:SparrowChart.Legend>
+			<sc:Legend Header="凡例" LegendPosition="Inside" HorizontalAlignment="Right" VerticalAlignment="Bottom" Dock="Right" />
+		</sc:SparrowChart.Legend>
+
+		<sc:SparrowChart.Series>
+			<sc:LineSeries Label="f(x)=sqrt(x)" PointsSource="{Binding Path=SqrtPoints}" XPath="X" YPath="Fx" />
+			<sc:LineSeries Label="f(x)=ln(x)" PointsSource="{Binding Path=LnPoints}" XPath="X" YPath="Fx" />
+			<sc:LineSeries Label="f(x)=x/2-1" PointsSource="{Binding Path=LinePoints}" XPath="X" YPath="Fx" />
+		</sc:SparrowChart.Series>
+	</sc:SparrowChart>
+</Window>
