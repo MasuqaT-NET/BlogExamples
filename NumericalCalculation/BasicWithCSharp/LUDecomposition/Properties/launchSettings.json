@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "LUDecomposition": {
+      "commandName": "Project",
+      "commandLineArgs": "> result.txt"
+    }
+  }
+}

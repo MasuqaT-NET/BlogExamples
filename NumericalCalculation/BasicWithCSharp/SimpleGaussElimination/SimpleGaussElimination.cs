@@ -49,7 +49,7 @@ namespace SimpleGaussElimination
 				6
 			};
 
-			double[] solutionX;
+			double[] solutionX = new double[Dimension];
 
 			Console.WriteLine("初期状態");
 			WriteEquations(matrixA, vectorB);
@@ -73,7 +73,6 @@ namespace SimpleGaussElimination
 			WriteEquations(matrixA, vectorB);
 			Console.WriteLine();
 
-			solutionX = new double[Dimension];
 			// 後退代入
 			for (int i = Dimension - 1; i >= 0; i--)
 			{

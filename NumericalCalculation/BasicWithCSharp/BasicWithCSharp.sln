@@ -13,6 +13,8 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SimpleGaussJordanEliminatio
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SimpleGaussElimination", "SimpleGaussElimination\SimpleGaussElimination.xproj", "{F25DF7FB-724A-42D5-8588-50567BD0C3BE}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "LUDecomposition", "LUDecomposition\LUDecomposition.xproj", "{143FF5EB-FDA2-47F1-9F13-D6E1934600A1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{F25DF7FB-724A-42D5-8588-50567BD0C3BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F25DF7FB-724A-42D5-8588-50567BD0C3BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F25DF7FB-724A-42D5-8588-50567BD0C3BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{143FF5EB-FDA2-47F1-9F13-D6E1934600A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{143FF5EB-FDA2-47F1-9F13-D6E1934600A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{143FF5EB-FDA2-47F1-9F13-D6E1934600A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{143FF5EB-FDA2-47F1-9F13-D6E1934600A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
