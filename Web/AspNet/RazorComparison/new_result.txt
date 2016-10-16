@@ -1,0 +1,95 @@
+namespace RazorTemplate
+{
+#line 1 ""
+using System.Linq;
+
+#line default
+#line hidden
+#line 2 ""
+using System.Collections.Generic;
+
+#line default
+#line hidden
+    using System;
+    using System.Threading.Tasks;
+
+    public class Generated : New.NewTemplateBase
+    {
+#line 20 ""
+
+	IEnumerable<string> CreateContent(int numberOfElements)
+	{
+		return Enumerable.Range(0, numberOfElements).Select(x => "Elem" + x);
+	}
+
+#line default
+#line hidden
+        #line hidden
+        public Generated()
+        {
+        }
+
+        #pragma warning disable 1998
+        public override async Task ExecuteAsync()
+        {
+#line 3 ""
+  
+	int number = 5;
+
+#line default
+#line hidden
+
+            WriteLiteral("<!DOCTYPE html>\r\n\r\n<html>\r\n<body>\r\n\t<p>コンテンツ数は");
+#line 10 ""
+          Write(number);
+
+#line default
+#line hidden
+            WriteLiteral("です。</p>\r\n\t<ul>\r\n");
+#line 12 ""
+		
+
+#line default
+#line hidden
+
+#line 12 ""
+         foreach (var item in CreateContent(number))
+		{
+
+#line default
+#line hidden
+
+            WriteLiteral("\t\t\t<li>");
+#line 14 ""
+           Write(item);
+
+#line default
+#line hidden
+            WriteLiteral("</li>\r\n");
+#line 15 ""
+		}
+
+#line default
+#line hidden
+
+            WriteLiteral("\t</ul>\r\n</body>\r\n</html>\r\n\r\n");
+        }
+        #pragma warning restore 1998
+    }
+}
+------------------------------------------------------------------------
+<!DOCTYPE html>
+
+<html>
+<body>
+	<p>コンテンツ数は5です。</p>
+	<ul>
+			<li>Elem0</li>
+			<li>Elem1</li>
+			<li>Elem2</li>
+			<li>Elem3</li>
+			<li>Elem4</li>
+	</ul>
+</body>
+</html>
+

@@ -1,0 +1,25 @@
+﻿@using System.Linq;
+@using System.Collections.Generic;
+@{
+	int number = 5;
+}
+<!DOCTYPE html>
+
+<html>
+<body>
+	<p>コンテンツ数は@(number)です。</p>
+	<ul>
+		@foreach (var item in CreateContent(number))
+		{
+			<li>@item</li>
+		}
+	</ul>
+</body>
+</html>
+
+@functions{
+	IEnumerable<string> CreateContent(int numberOfElements)
+	{
+		return Enumerable.Range(0, numberOfElements).Select(x => "Elem" + x);
+	}
+}

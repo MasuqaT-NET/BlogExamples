@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "New": {
+      "commandName": "Project",
+      "commandLineArgs": "> ../new_result.txt"
+    }
+  }
+}
