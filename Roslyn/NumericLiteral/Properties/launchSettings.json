@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "NumericLiteral": {
+      "commandName": "Project",
+      "commandLineArgs": "> result.txt"
+    }
+  }
+}
