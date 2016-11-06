@@ -14,6 +14,7 @@ namespace TypeInfo
 			var code = @"
 			using System.Collections;
 			using System.Collections.Generic;
+
 			class Class1
 			{
 				void Method1()

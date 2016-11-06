@@ -1,0 +1,27 @@
+A_Constant
+ -> Field, Class1, int
+
+b_field
+ -> Field, Class1, int
+
+C_Property
+ -> Property, Class1, int
+
+D_StaticProperty
+ -> Property, Class1, int
+
+f_Local
+ -> Local, Class1, int
+
+G_Class2Property
+ -> Property, Class2, int
+
+H_Class2StaticProperty
+ -> Property, Class2, int
+
+E_FieldAction
+ -> Field, Class1, System.Action<int>
+
+Method2
+ -> Method, Class1, (int) -> void
+

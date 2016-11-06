@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SymbolInfo": {
+      "commandName": "Project",
+      "commandLineArgs": "> result.txt"
+    }
+  }
+}
