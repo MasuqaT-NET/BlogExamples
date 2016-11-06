@@ -1,0 +1,12 @@
+1.0 + foo : double, (minimum)double, (converted)object
+typeof(Class1) : System.Type, (minimum)Type, (converted)object
+
+first Method2(array, array, array)
+No.0 : object[], (minimum)object[], (converted)object[]
+No.1 : object[], (minimum)object[], (converted)System.Collections.Generic.IEnumerable<object>
+No.2 : object[], (minimum)object[], (converted)System.Collections.IEnumerable
+
+second Method2(new Class1[1], null, array as IEnumerable<object>)
+No.0 : Class1[], (minimum)Class1[], (converted)object[]
+No.1 : , (minimum), (converted)System.Collections.Generic.IEnumerable<object>
+No.2 : System.Collections.Generic.IEnumerable<object>, (minimum)IEnumerable<object>, (converted)System.Collections.IEnumerable

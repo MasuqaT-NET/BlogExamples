@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TypeInfo": {
+      "commandName": "Project",
+      "commandLineArgs": "> result.txt"
+    }
+  }
+}
