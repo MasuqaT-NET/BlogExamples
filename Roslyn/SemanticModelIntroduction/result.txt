@@ -1,0 +1,9 @@
+WriteLine("Hello Notebook!")
+System.Console.WriteLine(string)
+
+WriteLine("Hello Canvas!")
+Piyo.Bar.WriteLine(string)
+
+System.Console.WriteLine("Log...")
+System.Console.WriteLine(string)
+

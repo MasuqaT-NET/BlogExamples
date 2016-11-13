@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SemanticModelIntroduction": {
+      "commandName": "Project",
+      "commandLineArgs": "> result.txt"
+    }
+  }
+}

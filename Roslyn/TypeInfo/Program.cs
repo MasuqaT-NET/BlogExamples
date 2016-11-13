@@ -38,7 +38,7 @@ namespace TypeInfo
 
 			var tree = CSharpSyntaxTree.ParseText(code);
 			var mscorlib = MetadataReference.CreateFromFile(typeof(object).GetTypeInfo().Assembly.Location);
-			var compilation = CSharpCompilation.Create("NumericLiteral", new[] { tree }, new[] { mscorlib });
+			var compilation = CSharpCompilation.Create("TypeInfo", new[] { tree }, new[] { mscorlib });
 			var model = compilation.GetSemanticModel(tree);
 
 
