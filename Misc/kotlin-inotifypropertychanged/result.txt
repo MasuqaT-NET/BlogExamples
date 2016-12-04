@@ -1,0 +1,9 @@
+Notified AnotherProperty [MainViewModel@246b179d]
+This is additional for AnotherProperty
+Hoge Taro
+Notified fullName [MainViewModel@246b179d]
+This is additional for fullName
+Piyo Jiro
+9876
+Notified step [MainKt$main$subVm$1@25f38edc]
+12345
