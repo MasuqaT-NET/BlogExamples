@@ -26,6 +26,8 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MSpecTest", "UnitTestExampl
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CommonMarkCms", "CommonMarkCms\CommonMarkCms.xproj", "{370BCA14-A83D-4C84-B818-11EA884CC6B6}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "AspNetCoreWebSocket", "AspNetCoreWebSocket\AspNetCoreWebSocket.xproj", "{982F8C28-7DB9-4E60-A87A-49D7347E96C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,6 +66,10 @@ Global
 		{370BCA14-A83D-4C84-B818-11EA884CC6B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{370BCA14-A83D-4C84-B818-11EA884CC6B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{370BCA14-A83D-4C84-B818-11EA884CC6B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{982F8C28-7DB9-4E60-A87A-49D7347E96C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{982F8C28-7DB9-4E60-A87A-49D7347E96C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{982F8C28-7DB9-4E60-A87A-49D7347E96C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{982F8C28-7DB9-4E60-A87A-49D7347E96C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
