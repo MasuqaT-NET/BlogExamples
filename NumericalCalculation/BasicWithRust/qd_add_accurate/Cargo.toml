@@ -1,0 +1,6 @@
+[package]
+name = "qd_add_accurate"
+version = "0.1.0"
+authors = ["MasuqaT <occar@hotmail.co.jp>"]
+
+[dependencies]
