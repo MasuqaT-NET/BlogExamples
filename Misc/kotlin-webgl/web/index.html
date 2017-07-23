@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kotlin WebGL Test</title>
+    <script data-main="main" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+
+    <script id="vs" type="x-shader/x-vertex">
+attribute vec3 position;
+uniform   mat4 mvpMatrix;
+
+void main(void){
+    gl_Position = mvpMatrix * vec4(position, 1.0);
+}
+        </script>
+
+    <script id="fs" type="x-shader/x-fragment">
+void main(void){
+    gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+        </script>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+</body>
+</html>
