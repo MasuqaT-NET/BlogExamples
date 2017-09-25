@@ -11,8 +11,8 @@ import org.springframework.web.reactive.function.server.ServerResponse
 class Application {
     @Bean
     fun routes(handlers: List<Handler>): RouterFunction<ServerResponse>
-            = handlers.map(Handler::route).reduce(RouterFunction<ServerResponse>::and)
-//            = handers.map { it.route() }.reduce { r1, r2 -> r1.and(r2) }
+            = handlers.map { it.route() }.reduce { r1, r2 -> r1.and(r2) }
+//            = handlers.map(Handler::route).reduce(RouterFunction<ServerResponse>::and)
 }
 
 fun main(args: Array<String>) {
