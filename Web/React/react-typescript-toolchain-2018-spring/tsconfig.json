@@ -11,19 +11,17 @@
     "allowJs": true,
     "jsx": "react",
     "moduleResolution": "node",
-    "rootDir": "src",
+    "rootDirs": [
+      "src",
+      "typings"
+    ],
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
-    "noUnusedLocals": true,
-    "baseUrl": "src",
-    "typeRoots": [
-      "node_modules/@types",
-      "typings"
-    ]
+    "noUnusedLocals": true
   },
   "exclude": [
     "node_modules",
