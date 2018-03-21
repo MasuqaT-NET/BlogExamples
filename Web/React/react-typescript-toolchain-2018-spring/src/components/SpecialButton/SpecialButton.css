@@ -1,0 +1,12 @@
+.root {
+  border: 1px solid red;
+  background-color: aliceblue;
+}
+
+.content {
+  font-size: large;
+}
+
+.description {
+  color: darkturquoise;
+}
