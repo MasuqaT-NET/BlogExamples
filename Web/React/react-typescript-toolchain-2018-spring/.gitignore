@@ -22,3 +22,6 @@ yarn-error.log*
 
 # generated .css.d.ts files
 typings/**/*.css.d.ts
+
+# generated storybook static files
+storybook-static
