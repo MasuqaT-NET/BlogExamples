@@ -25,3 +25,6 @@ typings/**/*.css.d.ts
 
 # generated storybook static files
 storybook-static
+
+# generated styleguidist static files
+styleguide

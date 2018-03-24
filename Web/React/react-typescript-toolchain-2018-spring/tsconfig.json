@@ -36,6 +36,8 @@
     "jest.config.js",
     "src/**/__tests__/**/*.ts?(x)",
     "src/**/?(*.)(spec|test).ts?(x)",
-    "storybook-static"
+    "storybook-static",
+    "styleguide.config.js",
+    "styleguide"
   ]
 }

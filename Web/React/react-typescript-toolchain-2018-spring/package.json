@@ -47,7 +47,11 @@
     "prestorybook": "yarn run tcm",
     "storybook": "start-storybook -p 6006",
     "prebuild-storybook": "yarn run tcm",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "prestyleguide": "yarn run tcm",
+    "styleguide": "styleguidist server",
+    "prestyleguide:build": "yarn run tcm",
+    "styleguide:build": "styleguidist build"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.3.15",
@@ -67,6 +71,8 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "prettier": "^1.11.1",
+    "react-docgen-typescript": "^1.2.6",
+    "react-styleguidist": "^6.5.2",
     "react-test-renderer": "^16.2.0",
     "tslint-config-prettier": "^1.10.0",
     "tslint-plugin-prettier": "^1.3.0",
