@@ -1,4 +1,6 @@
-module.exports = {
+const snapguidist = require('snapguidist');
+
+module.exports = snapguidist({
   components: 'src/components/**/*.{ts,tsx}',
   propsParser: require('react-docgen-typescript').parse,
   webpackConfig: require('./config/webpack.config.dev.js'),
@@ -9,4 +11,4 @@ module.exports = {
     '**/*.stories.{js,jsx,ts,tsx}',
     '**/*.d.ts',
   ]
-};
+});

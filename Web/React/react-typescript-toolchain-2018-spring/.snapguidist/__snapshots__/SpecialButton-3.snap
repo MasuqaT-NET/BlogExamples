@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SpecialButton-3 1`] = `
+<button
+  className="SpecialButton__root___vwDQP"
+>
+  <span
+    className="SpecialButton__content___2DXrp"
+  >
+    😘😎
+  </span>
+  <span
+    className="SpecialButton__description___14btM"
+  >
+     is awesome.
+  </span>
+</button>
+`;
