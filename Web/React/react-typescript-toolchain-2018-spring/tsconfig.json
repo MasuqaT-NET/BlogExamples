@@ -38,6 +38,9 @@
     "src/**/?(*.)(spec|test).ts?(x)",
     "storybook-static",
     "styleguide.config.js",
-    "styleguide"
+    "styleguide",
+    "jest.e2e.config.js",
+    "jest-puppeteer.config.js",
+    "e2e/**/*.ts?(x)"
   ]
 }
