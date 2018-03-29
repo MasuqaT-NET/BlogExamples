@@ -28,3 +28,6 @@ storybook-static
 
 # generated styleguidist static files
 styleguide
+
+# misc
+.idea
