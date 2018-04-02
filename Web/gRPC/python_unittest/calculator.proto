@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package int32_math;
+
+// The calculator service definition.
+service Calculator {
+  // Unary RPC (Simple RPC)
+  // y(x) = x^2
+  rpc Square (CalculationRequest) returns (CalculationResponse) {
+  }
+
+  // Server-side streaming RPC (Response streaming RPC)
+  // y(x)_j = {t | t in N+, t <= x}_j
+  rpc NaturalNumberGenerator (CalculationRequest) returns (stream CalculationResponse) {
+  }
+
+  // Client-side streaming RPC (Request streaming RPC)
+  // y(x_i) = sum x_i
+  rpc Summation (stream CalculationRequest) returns (CalculationResponse) {
+  }
+
+  // Duplex streaming RPC (Bidirectional RPC)
+  // y(x_i)_j = {x_i + x_(i-1) + x_(i-2) | i mod 3 = 2}_j,
+  rpc Buffer3Sum (stream CalculationRequest) returns (stream CalculationResponse) {
+  }
+}
+
+// The request message containing int32 value.
+message CalculationRequest {
+  int32 value = 1;
+}
+
+// The response message containing int32 value.
+message CalculationResponse {
+  int32 value = 1;
+}
