@@ -11,7 +11,7 @@ from calculator_service import CalculatorService
 target_service = calculator_pb2.DESCRIPTOR.services_by_name['Calculator']
 
 
-class CalculatorTest(unittest.TestCase):
+class CalculatorServerTest(unittest.TestCase):
     def setUp(self):
         self._real_time = grpc_testing.strict_real_time()
         self._fake_time = grpc_testing.strict_fake_time(time.time())
