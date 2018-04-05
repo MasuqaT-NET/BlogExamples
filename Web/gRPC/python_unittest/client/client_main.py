@@ -1,7 +1,7 @@
 import grpc
 
-import calculator_pb2_grpc
 from calculator_pb2 import CalculationRequest
+from client.client_lib import Connector
 
 
 def generator(max_value):
@@ -11,15 +11,27 @@ def generator(max_value):
 
 def run():
     channel = grpc.insecure_channel('localhost:50051')
-    stub = calculator_pb2_grpc.CalculatorStub(channel)
-    print(stub.Square(CalculationRequest(value=7)).value)
-    int_set = stub.NaturalNumberGenerator(CalculationRequest(value=7))
-    for v in int_set:
-        print(v.value)
-    print(stub.Summation(generator(7)).value)
-    sums = stub.Buffer3Sum(generator(7))
-    for s in sums:
-        print(s.value)
+    connector = Connector(channel)
+
+    print("Square")
+    print(connector.square(7))
+    print()
+
+    print("NaturalNumberGenerator")
+    int_array = connector.natural_numbers_lq(7)
+    for v in int_array:
+        print(v)
+    print()
+
+    print("Summation")
+    print(connector.summation([1, 2, 3, 4, 5, 6, 7]))
+    print()
+
+    print("Buffer3Sum")
+    int_array = connector.buffer3_sum([1, 2, 3, 4, 5, 6, 7])
+    for v in int_array:
+        print(v)
+    print()
 
 
 if __name__ == '__main__':
