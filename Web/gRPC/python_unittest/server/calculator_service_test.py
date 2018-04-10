@@ -6,7 +6,7 @@ import grpc
 import calculator_pb2
 import grpc_testing
 from calculator_pb2 import CalculationRequest, CalculationResponse
-from calculator_service import CalculatorService
+from server.calculator_service import CalculatorService
 
 target_service = calculator_pb2.DESCRIPTOR.services_by_name['Calculator']
 
@@ -15,15 +15,14 @@ class CalculatorServerTest(unittest.TestCase):
     def setUp(self):
         self._real_time = grpc_testing.strict_real_time()
         self._fake_time = grpc_testing.strict_fake_time(time.time())
-        servicer = CalculatorService()
-        descriptors_to_servicers = {
-            # _application_testing_common.FIRST_SERVICE: servicer
-            target_service: servicer
+        service = CalculatorService()
+        descriptors_to_services = {
+            target_service: service
         }
         self._real_time_server = grpc_testing.server_from_dictionary(
-            descriptors_to_servicers, self._real_time)
+            descriptors_to_services, self._real_time)
         self._fake_time_server = grpc_testing.server_from_dictionary(
-            descriptors_to_servicers, self._fake_time)
+            descriptors_to_services, self._fake_time)
 
     def test_successful_Square(self):
         rpc = self._real_time_server.invoke_unary_unary(

@@ -4,7 +4,7 @@ from concurrent import futures
 import grpc
 
 import calculator_pb2_grpc
-from calculator_service import CalculatorService
+from server.calculator_service import CalculatorService
 
 _ONE_DAY_IN_SECONDS = 60 * 60 * 24
 
