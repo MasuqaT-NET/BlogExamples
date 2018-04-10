@@ -25,9 +25,11 @@ class CalculatorServerTest(unittest.TestCase):
             descriptors_to_services, self._fake_time)
 
     def test_successful_Square(self):
+        request = CalculationRequest(value=2)
+
         rpc = self._real_time_server.invoke_unary_unary(
             target_service.methods_by_name['Square'], (),
-            CalculationRequest(value=2), None)
+            request, None)
 
         actual, trailing_metadata, code, details = rpc.termination()
         expected = CalculationResponse(value=4)
@@ -36,9 +38,11 @@ class CalculatorServerTest(unittest.TestCase):
         self.assertIs(code, grpc.StatusCode.OK)
 
     def test_successful_NaturalNumberGenerator(self):
+        request = CalculationRequest(value=2)
+
         rpc = self._real_time_server.invoke_unary_stream(
             target_service.methods_by_name['NaturalNumberGenerator'], (),
-            CalculationRequest(value=2), None)
+            request, None)
 
         actual = [
             rpc.take_response(),
@@ -73,7 +77,7 @@ class CalculatorServerTest(unittest.TestCase):
         rpc.send_request(CalculationRequest(value=1))
         rpc.send_request(CalculationRequest(value=2))
         rpc.send_request(CalculationRequest(value=3))
-        
+
         actual = rpc.take_response()
         expected = CalculationResponse(value=6)
 
