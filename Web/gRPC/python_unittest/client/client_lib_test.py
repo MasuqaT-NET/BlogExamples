@@ -121,7 +121,9 @@ class CalculatorClientTest(unittest.TestCase):
         actual_request2 = rpc.take_request()
         actual_request3 = rpc.take_request()
         actual_requests = [actual_request1, actual_request2, actual_request3]
-        expected_requests = [CalculationRequest(value=1), CalculationRequest(value=2), CalculationRequest(value=3)]
+        expected_requests = [CalculationRequest(value=1),
+                             CalculationRequest(value=2),
+                             CalculationRequest(value=3)]
 
         self.assertListEqual(expected_requests, actual_requests)
 
@@ -131,7 +133,9 @@ class CalculatorClientTest(unittest.TestCase):
         actual_request2 = rpc.take_request()
         actual_request3 = rpc.take_request()
         actual_requests = [actual_request1, actual_request2, actual_request3]
-        expected_requests = [CalculationRequest(value=4), CalculationRequest(value=5), CalculationRequest(value=6)]
+        expected_requests = [CalculationRequest(value=4),
+                             CalculationRequest(value=5),
+                             CalculationRequest(value=6)]
 
         self.assertListEqual(expected_requests, actual_requests)
 
@@ -140,7 +144,8 @@ class CalculatorClientTest(unittest.TestCase):
         actual_request1 = rpc.take_request()
         actual_request2 = rpc.take_request()
         actual_requests = [actual_request1, actual_request2]
-        expected_requests = [CalculationRequest(value=7), CalculationRequest(value=8)]
+        expected_requests = [CalculationRequest(value=7),
+                             CalculationRequest(value=8)]
 
         self.assertListEqual(expected_requests, actual_requests)
 
