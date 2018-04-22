@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "storybook": "start-storybook -p 9001"
+  },
   "devDependencies": {
     "@storybook/polymer": "^3.4.1",
     "babel-core": "^6.26.0",
