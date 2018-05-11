@@ -2307,6 +2307,10 @@ globby@^8.0.0:
     pify "^3.0.0"
     slash "^1.0.0"
 
+google-closure-library@^20180405.0.0:
+  version "20180405.0.0"
+  resolved "https://registry.yarnpkg.com/google-closure-library/-/google-closure-library-20180405.0.0.tgz#c02dfd0fbcd5b0913630cf9d13050a6d76b9da5d"
+
 got@^7.0.0:
   version "7.1.0"
   resolved "https://registry.yarnpkg.com/got/-/got-7.1.0.tgz#05450fd84094e6bbea56f451a43a9c289166385a"
