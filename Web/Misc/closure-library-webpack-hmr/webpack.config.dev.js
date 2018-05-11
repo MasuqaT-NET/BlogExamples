@@ -1,5 +1,6 @@
 const path = require("path");
 const webpack = require('webpack');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   mode: "development",
@@ -7,7 +8,10 @@ module.exports = {
     extensions: [".mjs", ".js"]
   },
   entry: {
-    bundle: [path.resolve(__dirname, "src/js/main.js")]
+    bundle: [
+      path.resolve(__dirname, "src/js/main.js"),
+      path.resolve(__dirname, "src/scss/style.scss")
+    ]
   },
   output: {
     filename: "[name].js",
@@ -50,13 +54,34 @@ module.exports = {
           'exports-loader?goog',
         ],
       },
+      {
+        test: /\.scss$/,
+        use: [
+          'css-hot-loader',
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+              importLoaders: 1
+            }
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true
+            }
+          }
+        ]
+      }
     ]
   },
   plugins: [
     new webpack.ProvidePlugin({
       goog: 'closure-builder/third_party/closure-library/closure/goog/base'
     }),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new MiniCssExtractPlugin('bundle.css')
   ],
   optimization: {
     namedModules: true

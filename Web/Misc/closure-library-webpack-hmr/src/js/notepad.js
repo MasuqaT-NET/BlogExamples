@@ -49,8 +49,7 @@ tutorial.notepad.Note = function(title, content, noteContainer) {
  */
 tutorial.notepad.Note.prototype.makeNoteDom = function() {
   // Create DOM structure to represent the note.
-  this.headerElement = goog.dom.createDom('div',
-      {'style': 'background-color:#EEE'}, this.title);
+  this.headerElement = goog.dom.createDom('div', null, this.title);
   this.contentElement = goog.dom.createDom('div', null, this.content);
   var newNote = goog.dom.createDom('div', null,
       this.headerElement, this.contentElement);
