@@ -16,7 +16,7 @@ goog.require('goog.ui.Zippy');
  * @return {Array.<tutorial.notepad.Note>} An array containing the resulting
  *     instances.
  */
-tutorial.notepad.makeNotes = function(data, noteContainer) {
+tutorial.notepad.makeNotes = function (data, noteContainer) {
   var notes = [];
   for (var i = 0; i < data.length; i++) {
     var note =
@@ -27,6 +27,18 @@ tutorial.notepad.makeNotes = function(data, noteContainer) {
   return notes;
 };
 
+/**
+ * Add note
+ * @param {Object} noteData The note data.
+ * @param {Element} noteContainer The element under which DOM nodes for
+ *     the notes should be added.
+ * @return {tutorial.notepad.Note} A resulting instances.
+ */
+tutorial.notepad.addNote = function (noteData, noteContainer) {
+  var note = new tutorial.notepad.Note(noteData.title, noteData.content, noteContainer);
+  note.makeNoteDom();
+  return note;
+};
 
 
 /**
@@ -37,7 +49,7 @@ tutorial.notepad.makeNotes = function(data, noteContainer) {
  *     the notes should be added.
  * @constructor
  */
-tutorial.notepad.Note = function(title, content, noteContainer) {
+tutorial.notepad.Note = function (title, content, noteContainer) {
   this.title = title;
   this.content = content;
   this.parent = noteContainer;
@@ -47,7 +59,7 @@ tutorial.notepad.Note = function(title, content, noteContainer) {
 /**
  * Creates the DOM structure for the note and adds it to the document.
  */
-tutorial.notepad.Note.prototype.makeNoteDom = function() {
+tutorial.notepad.Note.prototype.makeNoteDom = function () {
   // Create DOM structure to represent the note.
   this.headerElement = goog.dom.createDom('div', null, this.title);
   this.contentElement = goog.dom.createDom('div', null, this.content);
