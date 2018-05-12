@@ -1,6 +1,9 @@
+const fs = require("fs");
 const path = require("path");
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+const hmrAppend = JSON.stringify(fs.readFileSync(path.resolve(__dirname, 'src/js/hmr-append.js')).toString());
 
 module.exports = {
   mode: "development",
@@ -23,16 +26,32 @@ module.exports = {
       {
         test: /src.*\.js$/,
         exclude: /node_modules/,
-        loader: 'closure-loader',
-        options: {
-          paths: [
-            path.resolve(__dirname, 'src'),
-            path.resolve(__dirname, 'node_modules/closure-builder/third_party/closure-library/closure/goog'),
-          ],
-          es6mode: true,
-          watch: true,
-          fileExt: '.js',
-        }
+        use: [
+          function (info) {
+            if (/src.js.main\.js$/.test(info.resource)) { // filter
+              return {
+                loader: '@shoutem/webpack-prepend-append',
+                query: '{"append":' + hmrAppend + '}' // `hmrAppend` is already wrapped with `"`
+              };
+            } else {
+              return {
+                loader: 'noop-loader'
+              }
+            }
+          },
+          {
+            loader: 'closure-loader',
+            options: {
+              paths: [
+                path.resolve(__dirname, 'src'),
+                path.resolve(__dirname, 'node_modules/closure-builder/third_party/closure-library/closure/goog'),
+              ],
+              es6mode: true,
+              watch: true,
+              fileExt: '.js',
+            }
+          }
+        ]
       },
       {
         test: /node_modules.closure-builder.third_party.closure-library.closure.goog.*\.js$/,
@@ -50,7 +69,7 @@ module.exports = {
       {
         test: /node_modules.closure-builder.third_party.closure-library.closure.goog.base\.js/,
         use: [
-          'imports-loader?this=>{goog:{}}&goog=>this.goog',
+          'imports-loader?this=>{goog:{}},goog=>this.goog',
           'exports-loader?goog',
         ],
       },

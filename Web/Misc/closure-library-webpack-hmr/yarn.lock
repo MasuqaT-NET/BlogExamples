@@ -9,6 +9,10 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
+"@shoutem/webpack-prepend-append@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@shoutem/webpack-prepend-append/-/webpack-prepend-append-1.0.1.tgz#65e146f6356bfe66a4eb98cd191379184f70ade0"
+
 "@sindresorhus/is@^0.7.0":
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
@@ -4761,6 +4765,10 @@ nomnom@^1.8.1:
   dependencies:
     chalk "~0.4.0"
     underscore "~1.6.0"
+
+noop-loader@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/noop-loader/-/noop-loader-1.0.0.tgz#04c53f759bb08f56def63ee26922c65e3f0a4e5a"
 
 "nopt@2 || 3":
   version "3.0.6"
