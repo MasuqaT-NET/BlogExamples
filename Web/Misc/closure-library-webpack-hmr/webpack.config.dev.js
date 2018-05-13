@@ -43,8 +43,11 @@ module.exports = {
             loader: 'closure-loader',
             options: {
               paths: [
-                path.resolve(__dirname, 'src'),
-                path.resolve(__dirname, 'node_modules/closure-builder/third_party/closure-library/closure/goog'),
+                path.resolve(__dirname, 'src/js'),
+                path.resolve(
+                  __dirname,
+                  'node_modules/closure-builder/third_party/closure-library/closure/goog'
+                )
               ],
               es6mode: true,
               watch: true,
@@ -58,7 +61,10 @@ module.exports = {
         loader: 'closure-loader',
         options: {
           paths: [
-            path.resolve(__dirname, 'node_modules/closure-builder/third_party/closure-library/closure/goog'),
+            path.resolve(
+              __dirname,
+              'node_modules/closure-builder/third_party/closure-library/closure/goog'
+            )
           ],
           es6mode: true,
           watch: true,
