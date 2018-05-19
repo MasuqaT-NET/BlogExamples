@@ -20,7 +20,7 @@ module.exports = {
     filename: "[name].js",
     path: path.resolve(__dirname, "demo")
   },
-  devtool: "source-map",
+  devtool: "eval",
   module: {
     rules: [
       {

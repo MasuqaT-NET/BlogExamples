@@ -62,4 +62,6 @@ typings/
 
 # Project specific
 demo/bundle.css
+demo/bundle.css.map
 demo/bundle.js
+demo/bundle.js.map
