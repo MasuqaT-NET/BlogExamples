@@ -1,0 +1,21 @@
+{
+  "name": "separate-complex-in-webpack",
+  "version": "0.1.0",
+  "description": "Separate document-script-style complex HTML file into multiple flows in Webpack.",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "webpack-dev-server --config webpack.config.dev.js"
+  },
+  "devDependencies": {
+    "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "html-loader": "^0.5.5",
+    "loader-utils": "^1.1.0",
+    "mini-css-extract-plugin": "^0.4.0",
+    "noop-loader": "^1.0.0",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.3",
+    "webpack-dev-server": "^3.1.4"
+  }
+}
