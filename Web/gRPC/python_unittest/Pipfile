@@ -1,0 +1,14 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+grpcio = "==1.11.0"
+
+[dev-packages]
+grpcio-tools = "==1.11.0"
+"grpc_testing-1.11.0" = {svn = "https://github.com/grpc/grpc/tags/v1.11.0/src/python/grpcio_testing/"}
+
+[requires]
+python_version = "3.6"
