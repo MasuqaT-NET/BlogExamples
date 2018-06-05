@@ -1,0 +1,6 @@
+@import "./variables";
+
+a, p {
+  font-size: 30px;
+  color: darken($base-color, 25%);
+}
