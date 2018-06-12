@@ -1,0 +1,11 @@
+{
+  "name": "string-interpolation-output-in-cheerio",
+  "version": "0.1.0",
+  "description": "Example project for string-interpolation-putput-in-cheerio",
+  "author": "MasuqaT <occar@hotmail.co.jp>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2"
+  }
+}
