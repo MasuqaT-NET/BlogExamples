@@ -1,0 +1,27 @@
+{
+  "name": "template-engine-with-webpack-and-express",
+  "version": "0.1.0",
+  "description": "Example for template engine with webpack and express",
+  "author": "MasuqaT <occar@hotmail.co.jp>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "webpack-serve --config ./webpack.config.dev.js",
+    "build": "webpack --config ./webpack.config.prod.js",
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "loader-utils": "^1.1.0"
+  },
+  "devDependencies": {
+    "chokidar": "^2.0.3",
+    "connect-history-api-fallback": "^1.5.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "koa-connect": "^2.0.1",
+    "noop-loader": "^1.0.0",
+    "webpack": "^4.12.0",
+    "webpack-cli": "^3.0.6",
+    "webpack-serve": "^1.0.4"
+  }
+}
