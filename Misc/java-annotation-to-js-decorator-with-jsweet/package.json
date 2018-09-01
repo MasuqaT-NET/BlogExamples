@@ -1,0 +1,19 @@
+{
+  "name": "java-annotation-to-js-decorator-with-jsweet",
+  "version": "0.1.0",
+  "description": "Example to transpile Java annotations to JavaScript decorators with JSweet",
+  "author": "MasuqaT <occar@hotmail.co.jp>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build-watch": "node watch.js"
+  },
+  "dependencies": {
+    "reflect-metadata": "^0.1.12"
+  },
+  "devDependencies": {
+    "chokidar": "^2.0.4",
+    "fs-extra": "^7.0.0",
+    "typescript": "^3.0.1"
+  }
+}
