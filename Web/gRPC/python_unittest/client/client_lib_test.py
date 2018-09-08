@@ -24,7 +24,7 @@ class CalculatorClientTest(unittest.TestCase):
             calculator_pb2.DESCRIPTOR.services_by_name.values(), self._real_time)
 
     def tearDown(self):
-        self._client_execution_thread_pool.shutdown(wait=True)
+        self._client_execution_thread_pool.shutdown(wait=False)
 
     def test_successful_square(self):
         arguments = 2

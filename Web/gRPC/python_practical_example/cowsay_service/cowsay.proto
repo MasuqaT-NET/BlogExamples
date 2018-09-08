@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package example;
+
+// cowsay service
+service Cowsay {
+    // get quote from cowsay
+    rpc GetQuote (QuoteRequest) returns (QuoteResponse) {
+    }
+}
+
+message QuoteRequest {
+    string message = 1;
+    enum Animal {
+        UNKNOWN = 0;
+        COW = 1;
+        TUX = 2;
+    }
+    Animal animal = 2;
+}
+
+message QuoteResponse {
+    string output = 1;
+}

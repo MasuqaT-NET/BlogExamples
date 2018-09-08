@@ -1,0 +1,14 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+grpcio = "*"
+
+[dev-packages]
+grpcio-tools = "*"
+grpcio-testing = "*"
+
+[requires]
+python_version = "3.7"

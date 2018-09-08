@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package example;
+
+// quote service
+service Quote {
+    // get random quote
+    rpc GetRandomQuote (RandomQuoteRequest) returns (RandomQuoteResponse) {
+    }
+
+    rpc GetSecretKey(google.protobuf.Empty) returns (SecretKeyResponse) {
+    }
+}
+
+message RandomQuoteRequest {
+    string message = 1;
+}
+
+message RandomQuoteResponse {
+    string output = 1;
+}
+
+message SecretKeyResponse {
+    string key = 1;
+}
