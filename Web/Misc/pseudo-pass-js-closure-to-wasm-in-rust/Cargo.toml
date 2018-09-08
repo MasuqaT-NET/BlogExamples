@@ -1,0 +1,9 @@
+[package]
+name = "pseudo-pass-js-closure-to-wasm-in-rust"
+version = "0.1.0"
+authors = ["MasuqaT <occar@hotmail.co.jp>"]
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]

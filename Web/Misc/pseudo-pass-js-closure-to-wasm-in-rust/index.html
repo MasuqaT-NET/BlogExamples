@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="module">
+    import _lib from './lib.js';
+
+    _lib.then(lib => {
+        console.log(lib.withClosureExample(Math.sqrt, 5));
+        console.log(lib.withClosureExample((a, b) => a * b, 2, 3));
+        console.log(lib.withClosureExample(function (a, b) {
+            console.log(arguments);
+            return a + b;
+        }, 2, 3));
+
+        lib.initData();
+        const data = [];
+        for (let i = 0; i < 1000000; i++) {
+            data[i] = i + 1;
+        }
+
+        const foldFunc = (l, r) => {
+            return l + r;
+        };
+
+        console.time("wasm-with-js");
+        console.log(lib.fold(foldFunc, 0));
+        console.timeEnd("wasm-with-js");
+
+        console.time("js");
+        console.log(data.reduce(foldFunc, 0));
+        console.timeEnd("js");
+
+        console.time("wasm");
+        console.log(lib.foldAsSumInRust(0));
+        console.timeEnd("wasm");
+    });
+</script>
+</body>
+</html>
