@@ -1,0 +1,27 @@
+{
+  "name": "filtering-with-ime-in-web-worker",
+  "version": "0.1.0",
+  "description": "Example of filtering list of content within IME in WebWorker.",
+  "author": "MasuqaT <occar@hotmail.co.jp>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "webpack-dev-server --mode development",
+    "build": "webpack --mode production",
+    "generate": "node genData.js"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^4.6.0",
+    "html-webpack-plugin": "^3.2.0",
+    "prettier": "^1.16.4",
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.3.3",
+    "webpack": "^4.29.4",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.1.14",
+    "worker-loader": "^2.0.0"
+  },
+  "dependencies": {
+    "wanakana": "^4.0.2"
+  }
+}
