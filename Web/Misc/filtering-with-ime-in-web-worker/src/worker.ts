@@ -34,11 +34,14 @@ ctx.addEventListener("message", event => {
   } else if (type === "search") {
     const { query }: { query: string } = event.data.payload;
     const normalizedQuery = normalize(query);
+
     // can this be Transferable object?
-    const remainingIndices = store.index
-      .map((data, n) => ({ data, n }))
-      .filter(v => match(v.data, normalizedQuery))
-      .map(v => v.n);
+    const remainingIndices = [];
+    for (let i = 0; i < store.index.length; i++) {
+      if (match(store.index[i], normalizedQuery)) {
+        remainingIndices.push(i);
+      }
+    }
     ctx.postMessage({ type: "result", payload: { remainingIndices } });
   }
 });

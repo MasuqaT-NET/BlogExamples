@@ -3,7 +3,7 @@ import { Content } from "./models";
 
 const worker = new Worker();
 
-const state = { contents: [] as Content[], remaining: [] as number[] };
+const state = { contents: [] as Content[], max: 20, remaining: [] as number[] };
 
 const root = document.createElement("div");
 
@@ -32,21 +32,16 @@ input.addEventListener("keyup", () => {
 });
 
 checkbox.addEventListener("change", () => {
+  state.max = checkbox.checked ? Infinity : 20;
+
   render();
 });
 
 function render() {
   const itemToRender: DocumentFragment[] = [];
 
-  let filteredContents = state.contents.filter(
-    (c, i) => state.remaining.includes(i) // naive
-  );
-
-  if (!checkbox.checked) {
-    filteredContents = filteredContents.slice(0, 20);
-  }
-
-  for (const c of filteredContents) {
+  for (let i = 0; i < state.remaining.length && i < state.max; i++) {
+    const c = state.contents[state.remaining[i]];
     const clone = document.importNode(template.content, true);
     const name = clone.querySelector(".name")!;
     name.textContent = c.name;
