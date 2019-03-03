@@ -1,0 +1,26 @@
+{
+  "name": "web-worker-with-typescript-fsa",
+  "version": "0.1.0",
+  "description": "Example of Web Worker with TypeScript-FSA.",
+  "main": "index.js",
+  "author": "MasuqaT <occar@hotmail.co.jp>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "webpack-dev-server --mode development",
+    "build": "webpack --mode production"
+  },
+  "dependencies": {
+    "typescript-fsa": "^3.0.0-beta-2"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^3.2.0",
+    "prettier": "^1.16.4",
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.3.3333",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1",
+    "worker-loader": "^2.0.0"
+  }
+}
