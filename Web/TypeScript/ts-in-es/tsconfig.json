@@ -4,6 +4,8 @@
     "strict": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "isolatedModules": true
+    "incremental": true,
+    "isolatedModules": true,
+    "skipLibCheck": true
   }
 }

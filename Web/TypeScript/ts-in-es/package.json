@@ -7,7 +7,8 @@
   "private": true,
   "scripts": {
     "start": "webpack-dev-server --mode=development",
-    "build": "webpack --mode=production",
+    "build-app": "webpack --mode=production",
+    "build-lib": "tsc --noEmit && rollup -c && tsc -p tsconfig-for-declaration.json",
     "test": "jest",
     "style": "eslint --ext .js,.jsx,.ts,.tsx src/"
   },
@@ -21,9 +22,13 @@
     "eslint": "^5.15.3",
     "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-prettier": "^3.0.1",
+    "fork-ts-checker-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^3.2.0",
     "jest": "^24.5.0",
     "prettier": "^1.16.4",
+    "rollup": "^1.7.4",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-node-resolve": "^4.0.1",
     "typescript": "^3.4.0-rc",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
