@@ -9,7 +9,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.[jtm]sx?$/,
+        test: /\.[jt]sx?$/,
         loader: "babel-loader"
       }
     ]
