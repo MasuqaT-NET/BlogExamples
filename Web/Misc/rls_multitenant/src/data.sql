@@ -19,4 +19,6 @@ VALUES ('bar', '2', 'Dave', 'Brown', 'brown@bar.example.com', '1999-9-9');
 SET app.tenant_id = DEFAULT;
 
 INSERT INTO news(announced_by, text)
-VALUES ('bar', 'We made a new phone.')
+VALUES ('foo', 'Happy holidays!');
+INSERT INTO news(announced_by, text)
+VALUES ('bar', 'We made a new phone.');
