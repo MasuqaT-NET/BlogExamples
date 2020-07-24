@@ -1,0 +1,12 @@
+{
+  "name": "domain-event-as-generator",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "MasuqaT",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "prettier": "^2.0.5",
+    "typescript": "^3.9.7"
+  }
+}
