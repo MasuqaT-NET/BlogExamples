@@ -1,5 +1,5 @@
-import { MediaPanelView, useMediaPanel } from "./MediaPanel";
-import { TextPanelView, useTextPanel } from "./TextPanel";
+import { useMediaPanel } from "./MediaPanel";
+import { useTextPanel } from "./TextPanel";
 import { useEffect } from "react";
 
 export function Panel({
@@ -19,19 +19,19 @@ export function Panel({
 }
 
 function MediaPanel(props: Parameters<typeof useMediaPanel>[0]) {
-  const values = useMediaPanel(props, { getPreviewUrl });
+  const { render: MediaPanel, load } = useMediaPanel(props, { getPreviewUrl });
 
   useEffect(() => {
-    values.load();
+    load();
   }, [props.id]);
 
-  return <MediaPanelView {...values} />;
+  return <MediaPanel />;
 }
 
 function TextPanel(props: Parameters<typeof useTextPanel>[0]) {
-  const values = useTextPanel(props, {});
+  const { render: TextPanel } = useTextPanel(props, {});
 
-  return <TextPanelView {...values} />;
+  return <TextPanel />;
 }
 
 async function getPreviewUrl(id: string): Promise<string> {

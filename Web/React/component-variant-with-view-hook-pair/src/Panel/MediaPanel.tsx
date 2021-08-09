@@ -1,6 +1,6 @@
-import { Header } from "./parts/Header";
-import { AttributesView, useAttributes } from "./parts/Attributes";
-import { PreviewView, usePreview } from "./parts/Preview";
+import { useHeader } from "./parts/Header";
+import { useAttributes } from "./parts/Attributes";
+import { usePreview } from "./parts/Preview";
 import { css } from "@emotion/react";
 import { useCallback, useState } from "react";
 
@@ -14,45 +14,41 @@ export function useMediaPanel(
 ) {
   const [previewUrl, setPreviewUrl] = useState<string>();
 
-  const preview = usePreview({ previewUrl }, {});
-  const attributes = useAttributes({ name }, {});
-
   const load = useCallback(async () => {
     setPreviewUrl(undefined);
     setPreviewUrl(await getPreviewUrl(id));
   }, [id, getPreviewUrl]);
 
-  return { name, preview, attributes, load };
-}
+  const { render: Header } = useHeader({ name });
+  const { render: Preview } = usePreview({ previewUrl }, {});
+  const { render: Attributes } = useAttributes({ name }, {});
 
-export function MediaPanelView({
-  name,
-  preview,
-  attributes,
-}: ReturnType<typeof useMediaPanel>) {
-  return (
-    <div
-      css={css`
-        padding: 16px;
-      `}
-    >
-      <div>
-        <Header name={name} />
-      </div>
+  return {
+    load,
+    render: () => (
       <div
         css={css`
-          margin-top: 16px;
+          padding: 16px;
         `}
       >
-        <PreviewView {...preview} />
+        <div>
+          <Header />
+        </div>
+        <div
+          css={css`
+            margin-top: 16px;
+          `}
+        >
+          <Preview />
+        </div>
+        <div
+          css={css`
+            margin-top: 12px;
+          `}
+        >
+          <Attributes />
+        </div>
       </div>
-      <div
-        css={css`
-          margin-top: 12px;
-        `}
-      >
-        <AttributesView {...attributes} />
-      </div>
-    </div>
-  );
+    ),
+  };
 }
