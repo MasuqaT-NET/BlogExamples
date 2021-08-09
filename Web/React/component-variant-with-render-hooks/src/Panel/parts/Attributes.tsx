@@ -1,11 +1,11 @@
 import { css } from "@emotion/react";
 import { useCallback, useMemo, useState } from "react";
 
-type Props = { name: string };
+type Props = { name: string; onChangeName?: (name: string) => void };
 
 type Dependencies = {};
 
-export function useAttributes({ name }: Props, {}: Dependencies) {
+export function useAttributes({ name, onChangeName }: Props, {}: Dependencies) {
   const [editing, setEditing] = useState(false);
 
   const startEditing = useCallback(() => setEditing(true), []);
@@ -40,6 +40,7 @@ export function useAttributes({ name }: Props, {}: Dependencies) {
             value={name}
             readOnly={!editing}
             role={!editing ? "paragraph" : undefined}
+            onChange={(e) => onChangeName?.(e.currentTarget.value)}
           />
           <button title="Edit" onClick={editing ? finishEditing : startEditing}>
             <i className={`fas ${editing ? "fa-check" : "fa-pencil-alt"}`} />

@@ -2,13 +2,13 @@ import { useHeader } from "./parts/Header";
 import { useAttributes } from "./parts/Attributes";
 import { css } from "@emotion/react";
 
-type Props = { name: string };
+type Props = { name: string; onChangeName?: (name: string) => void };
 
 type Dependencies = {};
 
-export function useTextPanel({ name }: Props, {}: Dependencies) {
+export function useTextPanel({ name, onChangeName }: Props, {}: Dependencies) {
   const { render: Header } = useHeader({ name });
-  const { render: Attributes } = useAttributes({ name }, {});
+  const { render: Attributes } = useAttributes({ name, onChangeName }, {});
 
   return {
     render: () => (

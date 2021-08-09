@@ -4,12 +4,16 @@ import { usePreview } from "./parts/Preview";
 import { css } from "@emotion/react";
 import { useCallback, useState } from "react";
 
-type Props = { id: string; name: string };
+type Props = {
+  id: string;
+  name: string;
+  onChangeName?: (name: string) => void;
+};
 
 type Dependencies = { getPreviewUrl: (id: string) => Promise<string> };
 
 export function useMediaPanel(
-  { id, name }: Props,
+  { id, name, onChangeName }: Props,
   { getPreviewUrl }: Dependencies
 ) {
   const [previewUrl, setPreviewUrl] = useState<string>();
@@ -21,7 +25,7 @@ export function useMediaPanel(
 
   const { render: Header } = useHeader({ name });
   const { render: Preview } = usePreview({ previewUrl }, {});
-  const { render: Attributes } = useAttributes({ name }, {});
+  const { render: Attributes } = useAttributes({ name, onChangeName }, {});
 
   return {
     load,
