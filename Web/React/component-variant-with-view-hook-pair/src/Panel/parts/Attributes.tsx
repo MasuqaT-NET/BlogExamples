@@ -11,7 +11,7 @@ function useObject({ name }: Props, {}: Dependencies) {
   const startEditing = useCallback(() => setEditing(true), []);
   const finishEditing = useCallback(() => setEditing(false), []);
 
-  return [{ name, editing, startEditing, finishEditing }];
+  return [{ name, editing, startEditing, finishEditing }, { editing }] as const;
 }
 
 export function View({

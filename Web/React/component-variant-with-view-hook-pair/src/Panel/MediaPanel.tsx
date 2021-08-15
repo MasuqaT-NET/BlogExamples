@@ -12,18 +12,23 @@ function useObject({ id, name }: Props, { getPreviewUrl }: Dependencies) {
   const [previewUrl, setPreviewUrl] = useState<string>();
 
   const [previewProps] = Preview.useObject({ previewUrl }, {});
-  const [attributesProps] = Attributes.useObject({ name }, {});
+  const [attributesProps, { editing: attributesEditing }] =
+    Attributes.useObject({ name }, {});
 
   const load = useCallback(async () => {
     setPreviewUrl(undefined);
     setPreviewUrl(await getPreviewUrl(id));
   }, [id, getPreviewUrl]);
 
-  return [{ name, previewProps, attributesProps }, { load }] as const;
+  return [
+    { name, attributesEditing, previewProps, attributesProps },
+    { load },
+  ] as const;
 }
 
 function View({
   name,
+  attributesEditing,
   previewProps,
   attributesProps,
 }: ReturnType<typeof useObject>[0]) {
@@ -38,6 +43,7 @@ function View({
       <div
         css={
           previewHovered &&
+          !attributesEditing &&
           css`
             animation: ${bounce} 0.4s ease infinite;
           `
