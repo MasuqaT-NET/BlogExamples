@@ -4,11 +4,11 @@ type Props = { previewUrl?: string };
 
 type Dependencies = {};
 
-export function usePreview({ previewUrl }: Props, {}: Dependencies) {
+function useObject({ previewUrl }: Props, {}: Dependencies) {
   return [{ previewUrl }];
 }
 
-export function PreviewView({ previewUrl }: ReturnType<typeof usePreview>[0]) {
+function View({ previewUrl }: ReturnType<typeof useObject>[0]) {
   return (
     <div
       css={css`
@@ -45,3 +45,5 @@ export function PreviewView({ previewUrl }: ReturnType<typeof usePreview>[0]) {
     </div>
   );
 }
+
+export const Preview = { useObject, View };

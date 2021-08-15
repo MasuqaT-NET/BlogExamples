@@ -1,21 +1,18 @@
 import { Header } from "./parts/Header";
-import { AttributesView, useAttributes } from "./parts/Attributes";
+import { Attributes } from "./parts/Attributes";
 import { css } from "@emotion/react";
 
 type Props = { name: string };
 
 type Dependencies = {};
 
-export function useTextPanel({ name }: Props, {}: Dependencies) {
-  const [attributes] = useAttributes({ name }, {});
+function useObject({ name }: Props, {}: Dependencies) {
+  const [attributesProps] = Attributes.useObject({ name }, {});
 
-  return [{ name, attributes }];
+  return [{ name, attributesProps }];
 }
 
-export function TextPanelView({
-  name,
-  attributes,
-}: ReturnType<typeof useTextPanel>[0]) {
+function View({ name, attributesProps }: ReturnType<typeof useObject>[0]) {
   return (
     <div
       css={css`
@@ -30,8 +27,10 @@ export function TextPanelView({
           margin-top: 16px;
         `}
       >
-        <AttributesView {...attributes} />
+        <Attributes.View {...attributesProps} />
       </div>
     </div>
   );
 }
+
+export const TextPanel = { useObject, View };

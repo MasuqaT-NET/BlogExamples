@@ -1,6 +1,6 @@
 import { Header } from "./parts/Header";
-import { AttributesView, useAttributes } from "./parts/Attributes";
-import { PreviewView, usePreview } from "./parts/Preview";
+import { Attributes } from "./parts/Attributes";
+import { Preview } from "./parts/Preview";
 import { css } from "@emotion/react";
 import { useCallback, useState } from "react";
 
@@ -8,28 +8,25 @@ type Props = { id: string; name: string };
 
 type Dependencies = { getPreviewUrl: (id: string) => Promise<string> };
 
-export function useMediaPanel(
-  { id, name }: Props,
-  { getPreviewUrl }: Dependencies
-) {
+function useObject({ id, name }: Props, { getPreviewUrl }: Dependencies) {
   const [previewUrl, setPreviewUrl] = useState<string>();
 
-  const [preview] = usePreview({ previewUrl }, {});
-  const [attributes] = useAttributes({ name }, {});
+  const [previewProps] = Preview.useObject({ previewUrl }, {});
+  const [attributesProps] = Attributes.useObject({ name }, {});
 
   const load = useCallback(async () => {
     setPreviewUrl(undefined);
     setPreviewUrl(await getPreviewUrl(id));
   }, [id, getPreviewUrl]);
 
-  return [{ name, preview, attributes }, { load }] as const;
+  return [{ name, previewProps, attributesProps }, { load }] as const;
 }
 
-export function MediaPanelView({
+function View({
   name,
-  preview,
-  attributes,
-}: ReturnType<typeof useMediaPanel>[0]) {
+  previewProps,
+  attributesProps,
+}: ReturnType<typeof useObject>[0]) {
   return (
     <div
       css={css`
@@ -44,15 +41,17 @@ export function MediaPanelView({
           margin-top: 16px;
         `}
       >
-        <PreviewView {...preview} />
+        <Preview.View {...previewProps} />
       </div>
       <div
         css={css`
           margin-top: 12px;
         `}
       >
-        <AttributesView {...attributes} />
+        <Attributes.View {...attributesProps} />
       </div>
     </div>
   );
 }
+
+export const MediaPanel = { useObject, View };

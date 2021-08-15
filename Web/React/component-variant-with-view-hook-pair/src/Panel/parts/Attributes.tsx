@@ -5,7 +5,7 @@ type Props = { name: string };
 
 type Dependencies = {};
 
-export function useAttributes({ name }: Props, {}: Dependencies) {
+function useObject({ name }: Props, {}: Dependencies) {
   const [editing, setEditing] = useState(false);
 
   const startEditing = useCallback(() => setEditing(true), []);
@@ -14,12 +14,12 @@ export function useAttributes({ name }: Props, {}: Dependencies) {
   return [{ name, editing, startEditing, finishEditing }];
 }
 
-export function AttributesView({
+export function View({
   name,
   editing,
   startEditing,
   finishEditing,
-}: ReturnType<typeof useAttributes>[0]) {
+}: ReturnType<typeof useObject>[0]) {
   const time = useMemo(() => new Date().toDateString(), []);
 
   return (
@@ -60,3 +60,5 @@ export function AttributesView({
     </dl>
   );
 }
+
+export const Attributes = { useObject, View };

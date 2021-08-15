@@ -1,5 +1,5 @@
-import { MediaPanelView, useMediaPanel } from "./MediaPanel";
-import { TextPanelView, useTextPanel } from "./TextPanel";
+import { MediaPanel } from "./MediaPanel";
+import { TextPanel } from "./TextPanel";
 import { useEffect } from "react";
 
 export function Panel({
@@ -9,29 +9,29 @@ export function Panel({
 }) {
   return item ? (
     item.type === "media" ? (
-      <MediaPanel id={item.id} name={item.name} />
+      <MediaPanel_ id={item.id} name={item.name} />
     ) : (
-      <TextPanel name={item.name} />
+      <TextPanel_ name={item.name} />
     )
   ) : (
     <div /> // Empty
   );
 }
 
-function MediaPanel(props: Parameters<typeof useMediaPanel>[0]) {
-  const [values, { load }] = useMediaPanel(props, { getPreviewUrl });
+function MediaPanel_(props: Parameters<typeof MediaPanel.useObject>[0]) {
+  const [viewProps, { load }] = MediaPanel.useObject(props, { getPreviewUrl });
 
   useEffect(() => {
     load();
   }, [props.id]);
 
-  return <MediaPanelView {...values} />;
+  return <MediaPanel.View {...viewProps} />;
 }
 
-function TextPanel(props: Parameters<typeof useTextPanel>[0]) {
-  const [values] = useTextPanel(props, {});
+function TextPanel_(props: Parameters<typeof TextPanel.useObject>[0]) {
+  const [viewProps] = TextPanel.useObject(props, {});
 
-  return <TextPanelView {...values} />;
+  return <TextPanel.View {...viewProps} />;
 }
 
 async function getPreviewUrl(id: string): Promise<string> {
