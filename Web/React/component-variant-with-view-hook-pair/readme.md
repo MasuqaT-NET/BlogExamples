@@ -8,4 +8,4 @@ This project is an example for the Component with multiple variation implemented
 
 ![Text panel](https://raw.githubusercontent.com/MasuqaT-NET/BlogExamples/master/Web/React/component-variant-with-view-hook-pair/TextPanel.jpeg)
 
-![Media panel](https://raw.githubusercontent.com/MasuqaT-NET/BlogExamples/master/Web/React/component-variant-with-view-hook-pair/Media.jpeg)
+![Media panel](https://raw.githubusercontent.com/MasuqaT-NET/BlogExamples/master/Web/React/component-variant-with-view-hook-pair/MediaPanel.jpeg)
