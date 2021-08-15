@@ -1,7 +1,7 @@
 import { Header } from "./parts/Header";
 import { Attributes } from "./parts/Attributes";
 import { Preview } from "./parts/Preview";
-import { css } from "@emotion/react";
+import { css, keyframes } from "@emotion/react";
 import { useCallback, useState } from "react";
 
 type Props = { id: string; name: string };
@@ -27,19 +27,30 @@ function View({
   previewProps,
   attributesProps,
 }: ReturnType<typeof useObject>[0]) {
+  const [previewHovered, setPreviewHovered] = useState(false);
+
   return (
     <div
       css={css`
         padding: 16px;
       `}
     >
-      <div>
+      <div
+        css={
+          previewHovered &&
+          css`
+            animation: ${bounce} 0.4s ease infinite;
+          `
+        }
+      >
         <Header name={name} />
       </div>
       <div
         css={css`
           margin-top: 16px;
         `}
+        onMouseEnter={() => setPreviewHovered(true)}
+        onMouseLeave={() => setPreviewHovered(false)}
       >
         <Preview.View {...previewProps} />
       </div>
@@ -53,5 +64,23 @@ function View({
     </div>
   );
 }
+
+const bounce = keyframes`
+  from, 20%, 53%, 80%, to {
+    transform: translate3d(0,0,0);
+  }
+
+  40%, 43% {
+    transform: translate3d(0, -10px, 0);
+  }
+
+  70% {
+    transform: translate3d(0, -5px, 0);
+  }
+
+  90% {
+    transform: translate3d(0,-1px,0);
+  }
+`;
 
 export const MediaPanel = { useObject, View };
