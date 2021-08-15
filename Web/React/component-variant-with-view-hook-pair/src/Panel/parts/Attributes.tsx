@@ -11,7 +11,7 @@ export function useAttributes({ name }: Props, {}: Dependencies) {
   const startEditing = useCallback(() => setEditing(true), []);
   const finishEditing = useCallback(() => setEditing(false), []);
 
-  return { name, editing, startEditing, finishEditing };
+  return [{ name, editing, startEditing, finishEditing }];
 }
 
 export function AttributesView({
@@ -19,7 +19,7 @@ export function AttributesView({
   editing,
   startEditing,
   finishEditing,
-}: ReturnType<typeof useAttributes>) {
+}: ReturnType<typeof useAttributes>[0]) {
   const time = useMemo(() => new Date().toDateString(), []);
 
   return (

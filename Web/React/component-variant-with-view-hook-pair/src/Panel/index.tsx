@@ -19,17 +19,17 @@ export function Panel({
 }
 
 function MediaPanel(props: Parameters<typeof useMediaPanel>[0]) {
-  const values = useMediaPanel(props, { getPreviewUrl });
+  const [values, { load }] = useMediaPanel(props, { getPreviewUrl });
 
   useEffect(() => {
-    values.load();
+    load();
   }, [props.id]);
 
   return <MediaPanelView {...values} />;
 }
 
 function TextPanel(props: Parameters<typeof useTextPanel>[0]) {
-  const values = useTextPanel(props, {});
+  const [values] = useTextPanel(props, {});
 
   return <TextPanelView {...values} />;
 }

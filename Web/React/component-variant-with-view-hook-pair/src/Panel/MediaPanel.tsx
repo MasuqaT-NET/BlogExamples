@@ -14,22 +14,22 @@ export function useMediaPanel(
 ) {
   const [previewUrl, setPreviewUrl] = useState<string>();
 
-  const preview = usePreview({ previewUrl }, {});
-  const attributes = useAttributes({ name }, {});
+  const [preview] = usePreview({ previewUrl }, {});
+  const [attributes] = useAttributes({ name }, {});
 
   const load = useCallback(async () => {
     setPreviewUrl(undefined);
     setPreviewUrl(await getPreviewUrl(id));
   }, [id, getPreviewUrl]);
 
-  return { name, preview, attributes, load };
+  return [{ name, preview, attributes }, { load }] as const;
 }
 
 export function MediaPanelView({
   name,
   preview,
   attributes,
-}: ReturnType<typeof useMediaPanel>) {
+}: ReturnType<typeof useMediaPanel>[0]) {
   return (
     <div
       css={css`

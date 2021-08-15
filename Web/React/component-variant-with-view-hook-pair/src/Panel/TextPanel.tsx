@@ -7,15 +7,15 @@ type Props = { name: string };
 type Dependencies = {};
 
 export function useTextPanel({ name }: Props, {}: Dependencies) {
-  const attributes = useAttributes({ name }, {});
+  const [attributes] = useAttributes({ name }, {});
 
-  return { name, attributes };
+  return [{ name, attributes }];
 }
 
 export function TextPanelView({
   name,
   attributes,
-}: ReturnType<typeof useTextPanel>) {
+}: ReturnType<typeof useTextPanel>[0]) {
   return (
     <div
       css={css`

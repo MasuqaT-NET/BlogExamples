@@ -5,10 +5,10 @@ type Props = { previewUrl?: string };
 type Dependencies = {};
 
 export function usePreview({ previewUrl }: Props, {}: Dependencies) {
-  return { previewUrl };
+  return [{ previewUrl }];
 }
 
-export function PreviewView({ previewUrl }: ReturnType<typeof usePreview>) {
+export function PreviewView({ previewUrl }: ReturnType<typeof usePreview>[0]) {
   return (
     <div
       css={css`
