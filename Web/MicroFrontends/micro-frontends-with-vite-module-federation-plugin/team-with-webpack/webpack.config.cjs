@@ -1,17 +1,17 @@
-const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const isProduction = process.env.NODE_ENV === "production";
 
 const config = {
-  entry: "./src/main.mjs",
+  entry: "./src/main.tsx",
   devServer: {
     open: true,
     host: "localhost",
   },
   plugins: [
+    new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
-      title: "aaa",
       template: "index.html",
     }),
   ],
@@ -19,24 +19,23 @@ const config = {
     rules: [
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
         type: "asset",
       },
       {
-        test: /\.(html|svelte)$/,
-        use: "svelte-loader",
-        include: [path.resolve(__dirname, "src")],
+        test: /\.(mts|tsx|ts)$/i,
+        loader: "ts-loader",
+        options: {
+          transpileOnly: true,
+        },
       },
     ],
   },
   resolve: {
-    alias: {
-      svelte: path.dirname(require.resolve("svelte/package.json")),
-    },
-    extensions: [".mjs", ".js", ".svelte"],
+    extensions: [".mts", ".tsx", ".ts", ".mjs", ".jsx", ".js"],
   },
 };
 
