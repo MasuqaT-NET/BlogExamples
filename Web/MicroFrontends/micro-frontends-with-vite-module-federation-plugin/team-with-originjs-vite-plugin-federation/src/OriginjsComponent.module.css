@@ -1,0 +1,26 @@
+@layer component.area {
+  .root {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10%;
+    border: 2px solid #00d8ff;
+    padding: 1em;
+  }
+
+  .logos {
+    display: flex;
+    gap: 5%;
+    justify-content: center;
+  }
+
+  .logo {
+    height: 24px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+}
