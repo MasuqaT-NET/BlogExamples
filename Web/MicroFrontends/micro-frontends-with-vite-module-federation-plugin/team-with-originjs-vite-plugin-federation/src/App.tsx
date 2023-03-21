@@ -2,6 +2,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import styles from "./App.module.css";
 import OriginjsComponent from "./OriginjsComponent";
+import WebpackComponent from "team_with_webpack/WebpackComponent";
 
 function App() {
   return (
@@ -24,7 +25,9 @@ function App() {
         <li className={styles.self}>
           <OriginjsComponent />
         </li>
-        <li>c</li>
+        <li>
+          <WebpackComponent />
+        </li>
       </ul>
     </div>
   );

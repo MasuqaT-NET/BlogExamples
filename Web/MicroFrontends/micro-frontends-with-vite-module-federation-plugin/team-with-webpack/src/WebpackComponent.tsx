@@ -1,6 +1,6 @@
 import reactLogo from "./assets/react.svg";
+import webpackLogo from "./../public/webpack.svg";
 import styles from "./WebpackComponent.module.css";
-const webpackLogo = "/webpack.svg";
 
 function WebpackComponent() {
   return (

@@ -1,18 +1,35 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 
 const isProduction = process.env.NODE_ENV === "production";
 
 const config = {
-  entry: "./src/main.tsx",
+  entry: "./src/index.ts",
   devServer: {
     open: true,
     host: "localhost",
+  },
+  experiments: {
+    outputModule: true,
   },
   plugins: [
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
       template: "index.html",
+      scriptLoading: "module",
+    }),
+    new ModuleFederationPlugin({
+      name: "team_with_webpack",
+      filename: "entry.js",
+      library: { type: "module" },
+      exposes: {
+        "./WebpackComponent": "./src/WebpackComponent.tsx",
+      },
+      remotes: {
+        team_with_originjs_vite_plugin_federation:
+          "http://localhost:4173/assets/entry.js",
+      },
     }),
   ],
   module: {
@@ -23,7 +40,7 @@ const config = {
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
-        type: "asset",
+        type: "asset/resource",
       },
       {
         test: /\.(mts|tsx|ts)$/i,
