@@ -11,6 +11,7 @@
   "devDependencies": {
     "css-loader": "^6.7.3",
     "html-webpack-plugin": "^5.5.0",
+    "prettier": "^2.8.5",
     "style-loader": "^3.3.2",
     "svelte": "^3.55.1",
     "svelte-check": "^2.10.3",
