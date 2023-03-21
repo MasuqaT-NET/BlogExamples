@@ -1,8 +1,11 @@
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import styles from "./OriginjsComponent.module.css";
+import { useState } from "react";
 
 function OriginjsComponent() {
+  const [count, setCount] = useState(0);
+
   return (
     <div className={styles.root}>
       <div className={styles.logos}>
@@ -10,7 +13,10 @@ function OriginjsComponent() {
         <img src={reactLogo} className={styles.logo} alt="React logo" />
       </div>
       <p className={styles.description}>
-        @originjs/vite-plugin-federation + React
+        <button onClick={() => setCount((c) => c + 1)}>
+          @originjs/vite-plugin-federation + React
+        </button>{" "}
+        {count}
       </p>
     </div>
   );
