@@ -1,6 +1,6 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 const isProduction = process.env.NODE_ENV === "production";
 
@@ -15,9 +15,8 @@ const config = {
   },
   plugins: [
     new MiniCssExtractPlugin(),
-    new HtmlWebpackPlugin({
-      template: "index.html",
-      scriptLoading: "module",
+    new CopyPlugin({
+      patterns: ["public/webpack.svg", "index.html"],
     }),
     new ModuleFederationPlugin({
       name: "team_with_webpack",
