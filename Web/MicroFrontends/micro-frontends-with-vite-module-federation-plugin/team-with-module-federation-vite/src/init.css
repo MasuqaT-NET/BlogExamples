@@ -1,0 +1,5 @@
+@layer reset, theme, global, component;
+
+@layer component.page, component.area;
+
+@import "@acab/reset.css" layer(reset);

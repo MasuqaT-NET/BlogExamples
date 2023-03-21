@@ -1,33 +1,31 @@
-import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
-import "./App.css";
+import styles from "./App.module.css";
+import ModuleFederationComponent from "./ModuleFederationComponent";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className={styles.root}>
+      <div className={styles.logos}>
+        <img
+          src={viteLogo}
+          className={`${styles.logo} ${styles.vite}`}
+          alt="Vite logo"
+        />
+        <img
+          src={reactLogo}
+          className={`${styles.logo} ${styles.react}`}
+          alt="React logo"
+        />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>@module-federation/vite + React</h1>
+      <ul className={styles.gallery}>
+        <li className={styles.self}>
+          <ModuleFederationComponent />
+        </li>
+        <li>b</li>
+        <li>c</li>
+      </ul>
     </div>
   );
 }

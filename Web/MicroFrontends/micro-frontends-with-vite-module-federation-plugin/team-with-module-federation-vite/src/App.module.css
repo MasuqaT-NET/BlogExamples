@@ -1,0 +1,50 @@
+@layer component.page {
+  .logos {
+    display: flex;
+    gap: 5%;
+    justify-content: center;
+  }
+
+  .logo {
+    height: 10em;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
+  }
+
+  .logo.vite:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+  }
+
+  .logo.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
+  }
+
+  .gallery {
+    margin-top: 3em;
+    display: flex;
+    gap: 5%;
+  }
+
+  .gallery > * {
+    display: grid;
+    flex: 1;
+    aspect-ratio: 16 / 9;
+    place-items: center;
+  }
+
+  .self {
+    position: relative;
+  }
+
+  .self::before {
+    content: "self";
+    position: absolute;
+    padding: 0.5em;
+    top: 0;
+    left: 0;
+    background: white;
+    opacity: 0.5;
+    color: red;
+  }
+}
